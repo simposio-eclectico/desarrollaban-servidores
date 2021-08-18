@@ -1,13 +1,17 @@
 tags:
-  - slug: document
-    name: document
-  - slug: mock
-    name: mock
-  - slug: style
-    name: style
-  - slug: license
-    name: license
-  - slug: mdx
-    name: mdx
-  - slug: markdown
-    name: markdown
+  - slug: modo-libre
+    name: modo libre
+  - slug: modo-serio
+    name: modo serio
+  - slug: vol.1
+    name: vol.1
+  - slug: vol.2
+    name: vol.2
+  - slug: aceleracionismo
+    name: aceleracionismo
+  - slug: nick-land
+    name: nick land
+  - slug: franco-berardi
+    name: franco berardi
+  - slug: silvia-federici
+    name: silvia federici
