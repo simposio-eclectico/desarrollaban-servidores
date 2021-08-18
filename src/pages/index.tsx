@@ -11,13 +11,13 @@ export default function Index() {
   let counter = 0;
 
   useEffect(() => {
-    const t = setTimeout(() => {
+    const t = setInterval(() => {
       const next = ++counter%phrases.length;
       console.log('next', next);
       setPhrase(phrases[next]);
     }, 1000);
-    return () => clearTimeout(t);
-  }, [phrase]);
+    return () => clearInterval(t);
+  }, []);
   return (
     <Layout>
       <BasicMeta url={"/"} />
