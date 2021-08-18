@@ -13,7 +13,6 @@ export default function Index() {
   useEffect(() => {
     const t = setInterval(() => {
       const next = ++counter%phrases.length;
-      console.log('next', next);
       setPhrase(phrases[next]);
     }, 1000);
     return () => clearInterval(t);
@@ -52,7 +51,7 @@ export default function Index() {
         }
         .fancy {
           color: #15847d;
-          animation-name: taadaa 1s infinite;
+          animation: taadaa 1s infinite;
           animation-direction: alternate;
         }
         .handle {
