@@ -3,8 +3,21 @@ import BasicMeta from "../components/meta/BasicMeta";
 import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import { SocialList } from "../components/SocialList";
+import { useEffect, useState } from "react";
 
 export default function Index() {
+  const phrases = ['cosas', 'revistas', 'servidores'];
+  const [phrase, setPhrase] = useState('cosas');
+  let counter = 0;
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      const next = ++counter%phrases.length;
+      console.log('next', next);
+      setPhrase(phrases[next]);
+    }, 1000);
+    return () => clearTimeout(t);
+  }, [phrase]);
   return (
     <Layout>
       <BasicMeta url={"/"} />
@@ -13,10 +26,9 @@ export default function Index() {
       <div className="container">
         <div>
           <h1>
-            Hi, We're Next.js & Netlify<span className="fancy">.</span>
+            Desarrollaban <span className="fancy">{phrase}</span>
           </h1>
-          <span className="handle">@nextjs-netlify-blog</span>
-          <h2>A blog template with Next.js and Netlify.</h2>
+          <h2>Bastión virtual para el no-futuro.</h2>
           <SocialList />
         </div>
       </div>
@@ -40,12 +52,28 @@ export default function Index() {
         }
         .fancy {
           color: #15847d;
+          animation-name: taadaa 1s infinite;
+          animation-direction: alternate;
         }
         .handle {
           display: inline-block;
           margin-top: 0.275em;
           color: #9b9b9b;
           letter-spacing: 0.05em;
+        }
+
+        @keyframes taadaa { 
+          0% {
+            opacity: 0;
+          }
+        
+          80% {
+            opacity: 1;
+          }
+
+          100% {
+            opacity: 1;
+          }
         }
 
         @media (min-width: 769px) {
